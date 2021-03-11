@@ -5,10 +5,11 @@ import 'package:meta/meta.dart';
 import '../../domain/entities/address_entity.dart';
 import '../../domain/failures/address_by_coordinates_failure.dart';
 import '../../domain/repositories/address_repository.dart';
+import '../core/http/google_maps_http_client.dart';
 import '../models/address_model.dart';
 
 class AddressRepositoryImpl extends AddressRepository {
-  final Dio _httpClient;
+  final GoogleMapsHttpClient _httpClient;
 
   const AddressRepositoryImpl(this._httpClient);
 

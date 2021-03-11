@@ -1,5 +1,5 @@
 String get googleMapsKey {
-  const key = String.fromEnvironment('google_maps_key');
+  const key = String.fromEnvironment('GOOGLE_MAPS_KEY');
   if (key.isEmpty) {
     throw Exception(
       'google_maps_key not found!\nPlease add an argument'
@@ -10,5 +10,6 @@ String get googleMapsKey {
 }
 
 String get language {
-  return const String.fromEnvironment('language') ?? 'en';
+  const key = String.fromEnvironment('LANGUAGE');
+  return key.isNotEmpty ? key : 'en';
 }
