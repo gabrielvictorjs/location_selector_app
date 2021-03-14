@@ -3,8 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 
 import '../../domain/entities/address_entity.dart';
-import '../../domain/failures/address_by_coordinates_failure.dart';
-import '../../domain/repositories/address_repository.dart';
+import '../../domain/repositories/address/address_repository.dart';
+import '../../domain/repositories/address/failures/index.dart';
 import '../core/http/google_maps_http_client.dart';
 import '../models/address_model.dart';
 
@@ -15,7 +15,7 @@ class AddressRepositoryImpl extends AddressRepository {
 
   @override
   Future<Either<AddressByCoordinatesFailure, AddressEntity>>
-      fetchAddressByCoordinates({
+      fetchByCoordinates({
     @required double latitude,
     @required double longitude,
   }) async {

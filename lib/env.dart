@@ -3,7 +3,7 @@ String get googleMapsKey {
   if (key.isEmpty) {
     throw Exception(
       'google_maps_key not found!\nPlease add an argument'
-      ' --dart-define google_maps_key=a_valid_key',
+      ' --dart-define GOOGLE_MAPS_KEY=a_valid_key',
     );
   }
   return key;
