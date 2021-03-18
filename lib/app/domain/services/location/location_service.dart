@@ -8,7 +8,5 @@ abstract class LocationService {
 
   Future<Either<CurrentPositionFailure, PositionEntity>> getCurrentPosition();
 
-  Future<void> requestPermission();
-
   Future<void> openSettings();
 }

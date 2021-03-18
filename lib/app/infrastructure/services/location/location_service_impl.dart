@@ -33,9 +33,4 @@ class LocationServiceImpl extends LocationService {
   Future<void> openSettings() async {
     await geolocator.openLocationSettings();
   }
-
-  @override
-  Future<void> requestPermission() async {
-    await geolocator.requestPermission();
-  }
 }
