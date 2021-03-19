@@ -41,5 +41,3 @@ class PrimaryButtonWidget extends StatelessWidget {
     return CustomLoadingWidget();
   }
 }
-
-

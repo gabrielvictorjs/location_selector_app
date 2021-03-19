@@ -7,6 +7,7 @@ import '../../../domain/services/location/failures/index.dart';
 import '../../widgets/custom_loading_widget.dart';
 import 'components/request_location_permission.dart';
 import 'location_permission_providers.dart';
+import 'notifiers/location_permission/current_location_notifier.dart';
 
 class LocationPermissionPage extends HookWidget {
   @override
@@ -45,13 +46,16 @@ class LocationPermissionPage extends HookWidget {
   }
 
   Widget _buildContent() {
-    return ProviderListener(
+    return ProviderListener<CurrentLocationState>(
       provider: currentLocationNotifierProvider.state,
       onChange: (context, state) {
         state.maybeMap(
           loadSuccess: (state) {
             Future.delayed(Duration(seconds: 2), () {
-              Navigator.of(context).pushReplacementNamed('/location-selector');
+              Navigator.of(context).pushReplacementNamed(
+                '/location-selector',
+                arguments: state.position,
+              );
             });
           },
           loadFailure: (state) {

@@ -21,7 +21,11 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/': (_) => LocationPermissionPage(),
-          '/location-selector': (_) => LocationSelectorPage(),
+          '/location-selector': (context) {
+            return LocationSelectorPage(
+              position: ModalRoute.of(context).settings.arguments,
+            );
+          },
         },
       ),
     );
